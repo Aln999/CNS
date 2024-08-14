@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Diffie-Hellman Key Exchange</title>
+</head>
+<body>
+    <script>
+        let p = BigInt(prompt("Enter the value of p"));
+        let g = BigInt(prompt("Enter the value of g"));
+        let a = BigInt(prompt("Enter Alice's private key a"));
+        let b = BigInt(prompt("Enter Bob's private key b"));
+        let A = (g ** a) % p;
+        let B = (g ** b) % p;
+        let s1 = (B ** a) % p;
+        let s2 = (A ** b) % p;
+        document.write("value of p is "+p+"<br>");
+        document.write("value of g is "+g+"<br>");
+        document.write("value of a is "+a+"<br>");
+        document.write("value of b is "+b+"<br>");
+        document.write("Alice's public value (A): " + A + "<br>");
+        document.write("Bob's public val   ue (B): " + B + "<br>");
+        document.write("Secret key for Alice: " + s1 + "<br>");
+        document.write("Secret key for Bob: " + s2 + "<br>");
+    </script>
+</body>
+</html>
